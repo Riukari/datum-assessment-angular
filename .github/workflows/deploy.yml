@@ -8,15 +8,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18  # Ensure Node.js 18+
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli  # Install Angular CLI globally
+
       - name: Install dependencies
-        run: npm install
+        run: npm install  # Ensure all project dependencies are installed
+
       - name: Build Angular App
-        run: npx ng build --output-path=docs --base-href=/address-book/
+        run: ng build --output-path=docs --base-href=/address-book/
+
       - name: Commit and Push `docs/`
         run: |
           git config --global user.email "github-actions@github.com"
