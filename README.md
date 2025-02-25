@@ -15,7 +15,7 @@ A simple address book app in Angular with in-memory CRUD operations.
 2. Deploy:
    ng deploy --base-href /address-book/
 
-## The app can be accessed at https://your-username.github.io/address-book/
+## The app can be accessed at https://riukari.github.io/datum-assessment-angular/
 
 ## For normal setup
 1. Clone the repository:
