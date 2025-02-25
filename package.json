@@ -1,0 +1,19 @@
+{
+  "name": "address-book",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build --output-path docs --base-href /address-book/",
+    "deploy": "ng deploy --base-href /address-book/"
+  },
+  "dependencies": {
+    "@angular/core": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/platform-browser": "^17.0.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^17.0.0",
+    "angular-cli-ghpages": "^1.0.0",
+    "typescript": "~5.1.0"
+  }
+}
