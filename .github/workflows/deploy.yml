@@ -32,4 +32,3 @@ jobs:
           git add docs
           git commit -m "Auto-build Angular app" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/riukari/datum-assessment-angular.git main
-
