@@ -23,7 +23,7 @@ jobs:
         run: npm install  # Ensure all project dependencies are installed
 
       - name: Build Angular App
-        run: ng build --output-path=docs --base-href=/address-book/
+        run: ng build --output-path=docs --base-href=/datum-assessment-angular/
 
       - name: Commit and Push Changes
         run: |
