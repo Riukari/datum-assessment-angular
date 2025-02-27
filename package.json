@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --output-path=docs --base-href=/address-book/"
+    "build": "--output-path=dist --base-href=/datum-assessment-angular/"
   },
   "private": true,
   "dependencies": {
