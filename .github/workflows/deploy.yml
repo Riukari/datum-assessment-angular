@@ -1,9 +1,12 @@
-name: Deploy Angular to GitHub Pages
+name: Deploy App to GitHub Pages
 on:
   push:
     branches:
       - main
- 
+
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,21 +17,20 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18  # Ensure Node.js 18+
+          node-version: 18
 
       - name: Install Angular CLI
-        run: npm install -g @angular/cli  # Install Angular CLI globally
+        run: npm install -g @angular/cli
 
       - name: Install dependencies
-        run: npm install  # Ensure all project dependencies are installed
+        run: npm install
 
       - name: Build Angular App
-        run: ng build --output-path=docs --base-href=/datum-assessment-angular/
+        run: ng build --output-path=dist --base-href=/datum-assessment-angular/
 
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "github-actions[bot]"
-          git add docs
-          git commit -m "Auto-build Angular app" || echo "No changes to commit"
-          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/riukari/datum-assessment-angular.git main
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages 
+          folder: dist
+          token: ${{ secrets.GH_PAT }}
