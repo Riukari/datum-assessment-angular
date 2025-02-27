@@ -1,27 +1,24 @@
 # datum-assessment-angular
 
 # Angular Address Book
+* to create a simple address book in angular without any backend
+* no need to save the data, just in memory
+* the app can perform CRUD on contacts with name, email and phone fields
+* CRUD means Create, Read, Update, Delete
 
-A simple address book app in Angular with in-memory CRUD operations.
-
-## Features
-- Add, edit, delete, and view contacts.
-- Uses Angular services to manage data in memory.
-
-## Deploy to Github Pages
-1. Build the project for GitHub Pages:
-   ng build --output-path docs --base-href /address-book/
+# Deployed to Github Pages
+1. Build:
+   ng build --output-path=dist --base-href=/datum-assessment-angular/
 
 2. Deploy:
-   ng deploy --base-href /address-book/
+   Uses JamesIves/github-pages-deploy-action to handle deployment automatically
+   branch: gh-pages 
+   folder: dist
 
-## The app can be accessed at https://riukari.github.io/datum-assessment-angular/
+# The app can be accessed at https://riukari.github.io/datum-assessment-angular/
 
-## For normal setup
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/your-username/address-book.git
-   cd address-book
+# For normal setup
+1. Clone the repository
 
 2. Install dependencies:
    npm install
