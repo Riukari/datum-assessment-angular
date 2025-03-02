@@ -1,12 +1,13 @@
-<form>
+<h2>{{ formContact.id ? 'Edit Contact' : 'Add Contact' }}</h2>
+<form (submit)="saveContact()">
   <label>Name:</label>
-  <input type="text" [(ngModel)]="contact.name">
-  
+  <input type="text" [(ngModel)]="formContact.name" name="name" required />
+
   <label>Email:</label>
-  <input type="email" [(ngModel)]="contact.email">
+  <input type="email" [(ngModel)]="formContact.email" name="email" required />
 
   <label>Phone:</label>
-  <input type="tel" [(ngModel)]="contact.phone">
+  <input type="text" [(ngModel)]="formContact.phone" name="phone" required />
 
-  <button (click)="saveContact()">Save</button>
+  <button type="submit">{{ formContact.id ? 'Update' : 'Add' }}</button>
 </form>
