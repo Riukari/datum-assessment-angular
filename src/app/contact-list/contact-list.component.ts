@@ -9,6 +9,7 @@ import { Contact } from '../contact.model';
 })
 export class ContactListComponent {
   contacts: Contact[];
+  selectedContact: Contact | null = null;
 
   constructor(private contactService: ContactService) {
     this.contacts = this.contactService.getContacts();
@@ -16,6 +17,15 @@ export class ContactListComponent {
 
   deleteContact(id: number) {
     this.contactService.deleteContact(id);
-    this.contacts = this.contactService.getContacts(); // Refresh list
+    this.contacts = this.contactService.getContacts(); 
+  }
+
+  editContact(contact: Contact) {
+    this.selectedContact = { ...contact }; 
+  }
+
+  onUpdateSuccess() {
+    this.contacts = this.contactService.getContacts(); 
+    this.selectedContact = null;
   }
 }
