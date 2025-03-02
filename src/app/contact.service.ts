@@ -20,7 +20,7 @@ export class ContactService {
   updateContact(updatedContact: Contact): void {
     const index = this.contacts.findIndex(c => c.id === updatedContact.id);
     if (index !== -1) {
-      this.contacts[index] = updatedContact;
+      this.contacts[index] = { ...updatedContact }; 
     }
   }
 
