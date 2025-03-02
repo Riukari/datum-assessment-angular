@@ -11,9 +11,11 @@
     <td>{{ contact.email }}</td>
     <td>{{ contact.phone }}</td>
     <td>
+      <button (click)="editContact(contact)">Edit</button>
       <button (click)="deleteContact(contact.id)">Delete</button>
     </td>
   </tr>
 </table>
 
-<app-contact-form></app-contact-form>
+<!-- Pass selectedContact to the form for editing -->
+<app-contact-form [contact]="selectedContact" (updateSuccess)="onUpdateSuccess()"></app-contact-form>
